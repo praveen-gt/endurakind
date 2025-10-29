@@ -9,6 +9,7 @@ import {
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
+import ContactForm from './ContactForm';
 
 interface ServiceFeature {
   title: string;
@@ -729,121 +730,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
             </motion.div>
 
             {/* Right Side - Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-3"
-            >
-              <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100">
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Send us a Message</h3>
-                  <p className="text-gray-600">Fill out the form below and we'll get back to you within 24 hours</p>
-                </div>
-
-                <form className="space-y-6">
-                  {/* Name Fields */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="block text-sm font-semibold text-gray-700">
-                        First Name <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="John"
-                        className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#09778e] focus:ring-4 focus:ring-[#09778e]/10 transition-all"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="block text-sm font-semibold text-gray-700">
-                        Last Name <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Doe"
-                        className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#09778e] focus:ring-4 focus:ring-[#09778e]/10 transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Email & Phone */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="block text-sm font-semibold text-gray-700">
-                        Email <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="john@example.com"
-                        className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#09778e] focus:ring-4 focus:ring-[#09778e]/10 transition-all"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="block text-sm font-semibold text-gray-700">
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        placeholder="0412 345 678"
-                        className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#09778e] focus:ring-4 focus:ring-[#09778e]/10 transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Service Selection */}
-                  <div className="space-y-2">
-                    <label className="block text-sm font-semibold text-gray-700">
-                      Service Interest
-                    </label>
-                    <select className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-gray-900 focus:outline-none focus:border-[#09778e] focus:ring-4 focus:ring-[#09778e]/10 transition-all">
-                      <option value="">Select a service</option>
-                      <option value="daily-activities">Daily Activities</option>
-                      <option value="community">Community Participation</option>
-                      <option value="independent-living">Independent Living</option>
-                      <option value="respite">Respite Care</option>
-                      <option value="coordination">Support Coordination</option>
-                    </select>
-                  </div>
-
-                  {/* Message */}
-                  <div className="space-y-2">
-                    <label className="block text-sm font-semibold text-gray-700">
-                      Message <span className="text-red-500">*</span>
-                    </label>
-                    <textarea
-                      required
-                      rows={5}
-                      placeholder="Tell us how we can help you..."
-                      className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#09778e] focus:ring-4 focus:ring-[#09778e]/10 transition-all resize-none"
-                    />
-                  </div>
-
-                  {/* Privacy Notice */}
-                  <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl">
-                    <Shield className="w-5 h-5 text-[#09778e] flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-gray-600">
-                      Your information is secure and will only be used to respond to your inquiry. We respect your privacy.
-                    </p>
-                  </div>
-
-                  {/* Submit Button */}
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button 
-                      type="submit"
-                      size="lg"
-                      className="w-full bg-gradient-to-r from-[#09778e] to-[#016938] hover:from-[#07687d] hover:to-[#015030] text-white font-bold py-6 text-lg rounded-xl shadow-lg hover:shadow-2xl transition-all group"
-                    >
-                      Send Message
-                      <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </motion.div>
-                </form>
-              </div>
-            </motion.div>
+          <ContactForm />
           </div>
         </div>
       </section>

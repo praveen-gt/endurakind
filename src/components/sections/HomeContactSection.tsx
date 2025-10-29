@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { SITE_CONFIG } from '@/lib/constants';
+import ContactForm from './ContactForm';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -138,7 +139,7 @@ export default function ContactSection() {
           </motion.div>
 
           {/* Contact Form - 3 columns */}
-          <motion.div
+          {/* <motion.div
             {...scrollReveal}
             transition={{ delay: 0.2 }}
             className="lg:col-span-3"
@@ -228,7 +229,9 @@ export default function ContactSection() {
                 </p>
               </div>
             </form>
-          </motion.div>
+          </motion.div> */}
+
+          <ContactForm />
         </div>
       </div>
     </section>
