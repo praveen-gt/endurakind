@@ -2,8 +2,8 @@ export const SITE_CONFIG = {
   name: 'Endurakind',
   tagline: 'Building Bridges to Independence',
   description: 'Comprehensive disability support services focused on empowerment, independence, and quality of life.',
-  phone: '0370761066',
-  email: 'admin@endurakind.com.au',
+  phone: '+61493353976',
+  email: 'info@endurakind.com.au',
   address: 'Melbourne, Victoria, Australia'
 };
 
@@ -40,7 +40,9 @@ export const SERVICES = [
       'Transport support'
     ],
     href: '/services/daily-activities',
-    color: 'primary'
+    color: 'primary',
+    // heroImage: '/images/services/daily-activities-hero.jpg'
+    heroImage: '/images/hero/disability1.jpg'
   },
   {
     id: 'community-participation',

@@ -655,7 +655,7 @@ const features = [
   },
 ]
 
-export default function EnhancedWhyChooseSection() {
+export default function WhyChooseSection() {
   const sectionRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,

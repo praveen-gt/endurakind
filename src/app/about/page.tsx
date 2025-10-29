@@ -249,7 +249,7 @@
 //                 Where It All <span className="text-teal-600">Began</span>
 //               </h2>
 //               <div className="w-20 h-1 bg-gradient-to-r from-teal-600 to-amber-500 rounded-full mb-8"></div>
-              
+
 //               <div className="space-y-6">
 //                 <p className="text-lg text-gray-700 leading-relaxed">
 //                   Endurakind was founded with a simple yet powerful vision: to create an inclusive 
@@ -527,11 +527,11 @@
 //               Ready to Start Your{' '}
 //               <span className="text-white">Journey?</span>
 //             </h2>
-            
+
 //             <p className="text-xl md:text-2xl text-gray-800 mb-10 font-light drop-shadow">
 //               Contact us today to learn how we can support you or your loved ones
 //             </p>
-            
+
 //             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
 //               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
 //                 <Button 
@@ -542,7 +542,7 @@
 //                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
 //                 </Button>
 //               </motion.div>
-              
+
 //               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
 //                 <Button 
 //                   size="lg"
@@ -636,7 +636,7 @@ const AboutPage = () => {
   //   'Today, we\'re proud to be one of Melbourne\'s most trusted disability support providers, but our core values remain unchanged: compassion, inclusivity, empowerment, and integrity guide everything we do.'
   // ];
 
-    const storyParagraphs = [
+  const storyParagraphs = [
     'Endurakind is dedicated to fostering a community that celebrates individuality, inclusion, and human potential. We believe every person deserves the opportunity to live a meaningful, empowered life—regardless of ability, background, or circumstance.',
     'Our mission is to create supportive environments where kindness, understanding, and opportunity thrive. At Endurakind, we are guided by compassion, integrity, and the shared goal of helping each individual live with dignity and purpose.'
   ];
@@ -670,7 +670,7 @@ const AboutPage = () => {
   //   }
   // ];
 
-    const milestones = [
+  const milestones = [
     {
       year: '2025',
       title: 'Our Beginning',
@@ -718,9 +718,9 @@ const AboutPage = () => {
 
   // Team data
   const team = [
-    { 
-      name: 'Sarah Johnson', 
-      role: 'Founder & Director', 
+    {
+      name: 'Sarah Johnson',
+      role: 'Founder & Director',
       image: '/images/team/sarah.jpg',
       bio: 'Passionate about creating inclusive communities and empowering individuals.',
       social: {
@@ -728,9 +728,9 @@ const AboutPage = () => {
         email: 'sarah@endurakind.com.au'
       }
     },
-    { 
-      name: 'Michael Chen', 
-      role: 'Support Coordinator', 
+    {
+      name: 'Michael Chen',
+      role: 'Support Coordinator',
       image: '/images/team/michael.jpg',
       bio: 'Dedicated to personalized care plans and client success.',
       social: {
@@ -738,9 +738,9 @@ const AboutPage = () => {
         email: 'michael@endurakind.com.au'
       }
     },
-    { 
-      name: 'Emma Williams', 
-      role: 'Care Specialist', 
+    {
+      name: 'Emma Williams',
+      role: 'Care Specialist',
       image: '/images/team/emma.jpg',
       bio: 'Expert in disability support services with 8+ years experience.',
       social: {
@@ -748,9 +748,9 @@ const AboutPage = () => {
         email: 'emma@endurakind.com.au'
       }
     },
-    { 
-      name: 'David Brown', 
-      role: 'Community Liaison', 
+    {
+      name: 'David Brown',
+      role: 'Community Liaison',
       image: '/images/team/david.jpg',
       bio: 'Building lasting community connections and partnerships.',
       social: {
@@ -771,7 +771,7 @@ const AboutPage = () => {
       text: 'Call Us Now',
       icon: Phone,
       variant: 'secondary' as const,
-      onClick: () => window.location.href = 'tel:0370761066'
+      onClick: () => window.location.href = 'tel:+61493353976'
     }
   ];
 
@@ -791,14 +791,8 @@ const AboutPage = () => {
         backgroundImage="/images/hero/disability1.jpg"
       />
 
-      {/* Stats Section */}
-      {/* <StatsGrid 
-        stats={stats}
-        columns={4}
-      /> */}
-
-       {/* About Intro Section (replaces StatsGrid) */}
-      <section className="py-20 bg-gray-50">
+      {/* About Intro Section (replaces StatsGrid) */}
+      <section className="pt-20 md:pt-32 bg-gray-50">
         <div className="container-custom text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Welcome to <span className="text-teal-600">Endurakind</span>
@@ -847,7 +841,7 @@ const AboutPage = () => {
       />
 
       {/* Team Section */}
-      <TeamGrid
+      {/* <TeamGrid
         badge="The People Behind Our Mission"
         title="Meet Our"
         highlightedWord="Team"
@@ -855,7 +849,7 @@ const AboutPage = () => {
         members={team}
         columns={4}
         backgroundColor="bg-white"
-      />
+      /> */}
 
       {/* CTA Section */}
       <CTASection
