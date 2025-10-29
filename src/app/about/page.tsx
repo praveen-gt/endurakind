@@ -602,38 +602,43 @@ import { CTASection } from '@/components/about/CTASection';
 
 const AboutPage = () => {
   // Stats data
-  const stats = [
-    { 
-      icon: Clock,
-      value: '10+', 
-      label: 'Years Experience',
-      description: 'Serving our community'
-    },
-    { 
-      icon: Users,
-      value: '200+', 
-      label: 'Families Supported',
-      description: 'Building independence together'
-    },
-    { 
-      icon: Award,
-      value: '50+', 
-      label: 'Care Professionals',
-      description: 'Dedicated to excellence'
-    },
-    { 
-      icon: TrendingUp,
-      value: '24/7', 
-      label: 'Available Support',
-      description: 'We\'re here when you need us'
-    }
-  ];
+  // const stats = [
+  //   { 
+  //     icon: Clock,
+  //     value: '10+', 
+  //     label: 'Years Experience',
+  //     description: 'Serving our community'
+  //   },
+  //   { 
+  //     icon: Users,
+  //     value: '200+', 
+  //     label: 'Families Supported',
+  //     description: 'Building independence together'
+  //   },
+  //   { 
+  //     icon: Award,
+  //     value: '50+', 
+  //     label: 'Care Professionals',
+  //     description: 'Dedicated to excellence'
+  //   },
+  //   { 
+  //     icon: TrendingUp,
+  //     value: '24/7', 
+  //     label: 'Available Support',
+  //     description: 'We\'re here when you need us'
+  //   }
+  // ];
 
   // Story section data
-  const storyParagraphs = [
-    'Endurakind was founded with a simple yet powerful vision: to create an inclusive community where every person, regardless of ability, can live independently and thrive.',
-    'Our journey began over a decade ago when our founder recognized the need for truly person-centered disability support services. What started as a small team with big dreams has grown into a comprehensive support network serving hundreds of families across Victoria.',
-    'Today, we\'re proud to be one of Melbourne\'s most trusted disability support providers, but our core values remain unchanged: compassion, inclusivity, empowerment, and integrity guide everything we do.'
+  // const storyParagraphs = [
+  //   'Endurakind was founded with a simple yet powerful vision: to create an inclusive community where every person, regardless of ability, can live independently and thrive.',
+  //   'Our journey began over a decade ago when our founder recognized the need for truly person-centered disability support services. What started as a small team with big dreams has grown into a comprehensive support network serving hundreds of families across Victoria.',
+  //   'Today, we\'re proud to be one of Melbourne\'s most trusted disability support providers, but our core values remain unchanged: compassion, inclusivity, empowerment, and integrity guide everything we do.'
+  // ];
+
+    const storyParagraphs = [
+    'Endurakind is dedicated to fostering a community that celebrates individuality, inclusion, and human potential. We believe every person deserves the opportunity to live a meaningful, empowered life—regardless of ability, background, or circumstance.',
+    'Our mission is to create supportive environments where kindness, understanding, and opportunity thrive. At Endurakind, we are guided by compassion, integrity, and the shared goal of helping each individual live with dignity and purpose.'
   ];
 
   const storyBadges = [
@@ -642,28 +647,42 @@ const AboutPage = () => {
   ];
 
   // Timeline data
-  const milestones = [
-    {
-      year: '2014',
-      title: 'The Beginning',
-      description: 'Endurakind was founded with a vision to create truly person-centered care in Victoria.'
-    },
-    {
-      year: '2017',
-      title: 'Growing Impact',
-      description: 'Expanded our services to support over 100 individuals and families across Melbourne.'
-    },
-    {
-      year: '2020',
-      title: 'Building Bridges',
-      description: 'Launched our community programs and 24/7 support services during challenging times.'
-    },
+  // const milestones = [
+  //   {
+  //     year: '2014',
+  //     title: 'The Beginning',
+  //     description: 'Endurakind was founded with a vision to create truly person-centered care in Victoria.'
+  //   },
+  //   {
+  //     year: '2017',
+  //     title: 'Growing Impact',
+  //     description: 'Expanded our services to support over 100 individuals and families across Melbourne.'
+  //   },
+  //   {
+  //     year: '2020',
+  //     title: 'Building Bridges',
+  //     description: 'Launched our community programs and 24/7 support services during challenging times.'
+  //   },
+  //   {
+  //     year: '2025',
+  //     title: 'Today & Beyond',
+  //     description: 'Supporting 200+ families with a team of 50+ dedicated professionals, looking to the future.'
+  //   }
+  // ];
+
+    const milestones = [
     {
       year: '2025',
-      title: 'Today & Beyond',
-      description: 'Supporting 200+ families with a team of 50+ dedicated professionals, looking to the future.'
+      title: 'Our Beginning',
+      description: 'Endurakind was founded with the vision to bring empathy-driven, inclusive support to individuals and families across Victoria.'
+    },
+    {
+      year: '2026',
+      title: 'Expanding Reach',
+      description: 'Growing our network and impact through compassionate care and meaningful partnerships.'
     }
   ];
+
 
   // Values data
   const values = [
@@ -773,10 +792,26 @@ const AboutPage = () => {
       />
 
       {/* Stats Section */}
-      <StatsGrid 
+      {/* <StatsGrid 
         stats={stats}
         columns={4}
-      />
+      /> */}
+
+       {/* About Intro Section (replaces StatsGrid) */}
+      <section className="py-20 bg-gray-50">
+        <div className="container-custom text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Welcome to <span className="text-teal-600">Endurakind</span>
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-4">
+            Endurakind is dedicated to fostering a community that celebrates individuality, inclusion, and human potential.
+            We believe every person deserves the opportunity to live a meaningful, empowered life—regardless of ability, background, or circumstance.
+          </p>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Guided by compassion and integrity, we’re building supportive environments where kindness and opportunity thrive for all.
+          </p>
+        </div>
+      </section>
 
       {/* Our Story Section */}
       <StorySection
