@@ -1,121 +1,3 @@
-// // src/components/layout/Footer.tsx
-// "use client"
-
-// import React from 'react';
-// import Link from 'next/link';
-// import Image from 'next/image';
-// import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
-// import { SITE_CONFIG, NAVIGATION_LINKS, SERVICES, SOCIAL_LINKS } from '@/lib/constants';
-
-// export default function Footer() {
-//   return (
-//     <footer className="bg-gray-900 text-white">
-//       <div className="container-custom py-12">
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-//           {/* About Section */}
-//           <div>
-//             <div className="flex items-center gap-2 mb-4">
-//               <div>
-//                 <div className="text-3xl font-bold text-white font-heading">Endurakind</div>
-//                 <div className="text-[10.5px] text-white-80 -mt-1 ml-[1px] hidden sm:block">Building Bridges to Independence</div>
-//               </div>
-//               <div className="relative">
-//                 <Image src={'/wheel-icon-white.png'} alt="Endurakind Icon" width={50} height={50} className="object-contain" />
-//               </div>
-
-//             </div>
-//             <p className="text-gray-400 text-sm mb-4">
-//               Building Bridges to Independence through compassionate disability support services.
-//             </p>
-//             <div className="flex gap-3">
-//               <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-theme-orange transition-colors">
-//                 <Facebook className="w-4 h-4" />
-//               </a>
-//               <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-theme-orange transition-colors">
-//                 <Instagram className="w-4 h-4" />
-//               </a>
-//               <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-theme-orange transition-colors">
-//                 <Linkedin className="w-4 h-4" />
-//               </a>
-//               <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-theme-orange transition-colors">
-//                 <Twitter className="w-4 h-4" />
-//               </a>
-//             </div>
-//           </div>
-
-//           {/* Quick Links */}
-//           <div>
-//             <h4 className="font-semibold mb-4 text-lg">Quick Links</h4>
-//             <ul className="space-y-2 text-gray-400">
-//               {NAVIGATION_LINKS.map((link) => (
-//                 <li key={link.name}>
-//                   <Link href={link.href} className="hover:text-theme-orange transition-colors">
-//                     {link.name}
-//                   </Link>
-//                 </li>
-//               ))}
-//             </ul>
-//           </div>
-
-//           {/* Services */}
-//           <div>
-//             <h4 className="font-semibold mb-4 text-lg">Our Services</h4>
-//             <ul className="space-y-2 text-gray-400 text-sm">
-//               {SERVICES.slice(0, 5).map((service) => (
-//                 <li key={service.id}>
-//                   <Link href={service.href} className="hover:text-theme-orange transition-colors">
-//                     {service.shortTitle}
-//                   </Link>
-//                 </li>
-//               ))}
-//             </ul>
-//           </div>
-
-//           {/* Contact Info */}
-//           <div>
-//             <h4 className="font-semibold mb-4 text-lg">Contact Us</h4>
-//             <ul className="space-y-3 text-gray-400 text-sm">
-//               <li className="flex items-start gap-2">
-//                 <Phone className="w-4 h-4 mt-1 flex-shrink-0" />
-//                 <a href={`tel:${SITE_CONFIG.phone}`} className="hover:text-theme-orange transition-colors">
-//                   {SITE_CONFIG.phone}
-//                 </a>
-//               </li>
-//               <li className="flex items-start gap-2">
-//                 <Mail className="w-4 h-4 mt-1 flex-shrink-0" />
-//                 <a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-theme-orange transition-colors break-all">
-//                   {SITE_CONFIG.email}
-//                 </a>
-//               </li>
-//               <li className="flex items-start gap-2">
-//                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-//                 <span>{SITE_CONFIG.address}</span>
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-
-//         {/* Bottom Bar */}
-//         <div className="border-t border-gray-800 pt-8">
-//           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-//             <p>&copy; {new Date().getFullYear()} Endurakind. All rights reserved. | NDIS Registered Provider</p>
-//             <div className="flex gap-6">
-//               <Link href="/privacy-policy" className="hover:text-theme-orange transition-colors">
-//                 Privacy Policy
-//               </Link>
-//               <Link href="/terms-conditions" className="hover:text-theme-orange transition-colors">
-//                 Terms & Conditions
-//               </Link>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// }
-
-
-// src/components/layout/EnhancedFooter.tsx
 "use client"
 
 import React from 'react';
@@ -139,15 +21,35 @@ import {
 import { SITE_CONFIG, NAVIGATION_LINKS, SERVICES, SOCIAL_LINKS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import NewsletterSignup from '../sections/NewsletterSignup';
 
 export default function EnhancedFooter() {
   const [email, setEmail] = React.useState('');
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Newsletter signup:', email);
-    setEmail('');
-  };
+const handleNewsletterSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch('/api/newsletter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert(data.message || 'Thanks for subscribing!');
+      setEmail('');
+    } else {
+      alert(data.error || 'Failed to subscribe.');
+    }
+  } catch (err) {
+    console.error('Newsletter submit failed:', err);
+    alert('Something went wrong. Please try again later.');
+  }
+};
+
 
   const quickStats = [
     { icon: Heart, label: 'Compassionate Care', color: 'text-pink-400' },
@@ -176,7 +78,7 @@ export default function EnhancedFooter() {
         <div className="container-custom py-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Newsletter */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -207,7 +109,9 @@ export default function EnhancedFooter() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </form>
-            </motion.div>
+            </motion.div> */}
+
+              <NewsletterSignup /> 
 
             {/* Right - Quick Stats */}
             <motion.div
