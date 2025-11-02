@@ -139,9 +139,11 @@ export default function Header() {
                   )}
                 </div>
               ))}
-              <Button className="btn-endurakind">
+              <Link href="/contact" passHref>
+              <Button className="btn-endurakind hover:cursor-pointer">
                 Get Started
               </Button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -245,9 +247,11 @@ export default function Header() {
                   </div>
                 ))}
 
-                <Button className="btn-endurakind w-full mt-2">
+                <Link href="/contact" passHref>
+                <Button className="btn-endurakind w-full mt-2 hover:cursor-pointer">
                   Get Started
                 </Button>
+                </Link>
               </div>
             </div>
           </motion.div>

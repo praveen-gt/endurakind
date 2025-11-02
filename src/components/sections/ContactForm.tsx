@@ -12,6 +12,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { scrollReveal } from '@/lib/animations';
+import { SITE_CONFIG } from '@/lib/constants';
+import Link from 'next/link';
 
 const reasons = [
   { icon: MessageSquare, title: 'General Inquiry', description: 'Learn more about our services' },
@@ -92,7 +94,7 @@ export default function ContactForm() {
   // ✅ Success State
   if (isSubmitted) {
     return (
-      <div className="text-center py-12 px-6 lg:pt-0">
+      <div className="text-center py-12 px-6 lg:pt-0 lg:col-span-3">
         <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
           <CheckCircle className="h-12 w-12 text-green-600" />
         </div>
@@ -100,7 +102,7 @@ export default function ContactForm() {
           Thank You for Getting in Touch!
         </h3>
         <p className="text-gray-600 mb-6 max-w-md mx-auto">
-          Your message has been sent successfully. Kevin or Sam will personally respond within 2 hours
+          Your message has been sent successfully. Our team will respond within 2 hours
           during business hours (Monday to Friday, 9:00 AM - 5:00 PM AEST).
         </p>
         <div className="space-y-3 mb-8">
@@ -118,7 +120,7 @@ export default function ContactForm() {
             Send Another Message
           </Button>
           <Button asChild className="bg-teal-600 hover:bg-teal-700 text-white">
-            <a href="tel:+61493353976">Call Us Now</a>
+            <Link href={`tel:${SITE_CONFIG.phone}`}>Call Us Now</Link>
           </Button>
         </div>
       </div>

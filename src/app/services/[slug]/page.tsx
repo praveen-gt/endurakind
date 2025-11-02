@@ -67,7 +67,10 @@ const EXTENDED_SERVICES = {
       }
     ],
     heroImage: '/images/services/daily-activities-hero.jpg',
-    image: '/images/services/daily-activities.jpg'
+    image1: '/images/services/daily-activity-support-1.jpg',
+    image2: '/images/services/daily-activity-support-2.jpg',
+    image3: '/images/services/daily-activity-support-3.jpg',
+    image4: '/images/services/daily-activity-support-4.jpg',
   },
   'community-participation': {
     ...SERVICES[1],
@@ -113,7 +116,10 @@ const EXTENDED_SERVICES = {
       }
     ],
     heroImage: '/images/services/community-participation-hero.jpg',
-    image: '/images/services/community-participation.jpg'
+    image1: '/images/services/community-participation-1.jpg',
+    image2: '/images/services/community-participation-2.jpg',
+    image3: '/images/services/daily-activity-support-3.jpg',
+    image4: '/images/services/daily-activity-support-4.jpg',
   },
   'supported-independent-living': {
     ...SERVICES[2],

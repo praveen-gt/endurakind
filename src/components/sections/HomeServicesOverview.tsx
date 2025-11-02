@@ -183,7 +183,7 @@ export default function EnhancedServicesSection() {
                   <Link href={`/services/${service.id}`}>
                     <Button 
                       variant="ghost" 
-                      className="w-full justify-between group/btn hover:bg-teal-50 hover:text-teal-700"
+                      className="w-full justify-between group/btn hover:bg-teal-50 hover:text-teal-700 hover:cursor-pointer"
                     >
                       Learn More
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
@@ -206,10 +206,12 @@ export default function EnhancedServicesSection() {
           className="text-center mt-16"
         >
           <p className="text-gray-600 mb-6">Can't find what you're looking for?</p>
-          <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-6 text-lg rounded-xl shadow-xl">
+          <Link href="/services" passHref>
+          <Button size="lg" className="hover:cursor-pointer bg-teal-600 hover:bg-teal-700 text-white px-8 py-6 text-lg rounded-xl shadow-xl">
             View All Services
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
+          </Link>
         </motion.div>
       </div>
 

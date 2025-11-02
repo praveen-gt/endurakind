@@ -40,9 +40,9 @@ export const SERVICES = [
       'Transport support'
     ],
     href: '/services/daily-activities',
-    color: 'primary',
-    // heroImage: '/images/services/daily-activities-hero.jpg'
-    heroImage: '/images/hero/disability1.jpg'
+    color: 'from-teal-500 to-teal-600',
+    heroImage: '/images/services/daily-activities-hero.jpg',
+    posterImage: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600&h=400&fit=crop',
   },
   {
     id: 'community-participation',
@@ -59,7 +59,9 @@ export const SERVICES = [
       'Building social connections'
     ],
     href: '/services/community-participation',
-    color: 'accent'
+    color: 'from-amber-400 to-orange-500',
+    heroImage: '/images/hero/disability1.jpg',
+    posterImage: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop',
   },
   {
     id: 'supported-independent-living',
@@ -76,7 +78,9 @@ export const SERVICES = [
       'Goal achievement support'
     ],
     href: '/services/supported-independent-living',
-    color: 'primary'
+    color: 'from-teal-600 to-cyan-600',
+    heroImage: '/images/hero/disability1.jpg',
+    posterImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
   },
   {
     id: 'short-term-accommodation',
@@ -93,7 +97,9 @@ export const SERVICES = [
       'Flexible booking options'
     ],
     href: '/services/short-term-accommodation',
-    color: 'accent'
+    color: 'from-yellow-400 to-amber-500',
+    heroImage: '/images/hero/disability1.jpg',
+    posterImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=400&fit=crop',
   },
   {
     id: 'support-coordination',
@@ -110,7 +116,9 @@ export const SERVICES = [
       'Provider liaison'
     ],
     href: '/services/support-coordination',
-    color: 'primary'
+    color: 'from-teal-700 to-teal-800',
+    heroImage: '/images/hero/disability1.jpg',
+    posterImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
   }
 ];
 

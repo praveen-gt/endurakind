@@ -37,7 +37,10 @@ interface ServicePageProps {
       title: string;
       description: string;
     }[];
-    image?: string;
+    image1?: string;
+    image2?: string;
+    image3?: string;
+    image4?: string;
     heroImage?: string;
     color?: string;
   };
@@ -207,7 +210,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
           className="absolute bottom-32 left-20 w-16 h-16 rounded-full bg-gradient-to-br from-[#016938]/20 to-[#09778e]/10 backdrop-blur-sm border border-[#09778e]/20 hidden lg:block"
         />
 
-        <div className="container-custom relative z-10 py-20">
+        <div className="container-custom relative z-10 pt-20">
           <div className=" mx-auto">
             {/* Breadcrumb - Minimal & Modern */}
             <motion.div
@@ -230,7 +233,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
             {/* Main Content */}
             <div className="">
               {/* Badge */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -238,7 +241,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
               >
                 <Sparkles className="w-4 h-4 text-[#09778e]" />
                 <span className="text-sm font-semibold text-[#09778e]">Premium Service</span>
-              </motion.div>
+              </motion.div> */}
 
               {/* Main Heading - Large & Bold */}
               <motion.h1
@@ -313,7 +316,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
             >
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl z-10">
                 <Image
-                  src={`/images/hero/disability2.jpg`}
+                  src={service.image1 || `/images/hero/disability1.jpg`}
                   alt={service.title}
                   fill
                   className="object-cover"
@@ -409,7 +412,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
             >
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src={`/images/hero/disability1.jpg`}
+                  src={service.image2 || `/images/hero/disability2.jpg`}
                   alt="Personal Care"
                   fill
                   className="object-cover"
@@ -529,7 +532,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
             >
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl z-1">
                 <Image
-                  src={`/images/hero/disability3.jpg`}
+                  src={service.image3 || `/images/hero/disability3.jpg`}
                   alt="Household Management"
                   fill
                   className="object-cover"
@@ -558,7 +561,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
             >
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src={`/images/hero/disability2.jpg`}
+                  src={service.image4 || `/images/hero/disability1.jpg`}
                   alt="Tailored Support"
                   fill
                   className="object-cover"

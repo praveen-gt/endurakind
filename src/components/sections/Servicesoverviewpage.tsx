@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  ArrowRight, CheckCircle, Heart, Users, Home, Palmtree, 
+import {
+  ArrowRight, CheckCircle, Heart, Users, Home, Palmtree,
   ClipboardList, Phone, Sparkles, Shield
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { SERVICES } from '@/lib/constants';
+import { SERVICES, SITE_CONFIG } from '@/lib/constants';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -24,8 +24,8 @@ const ServicesOverviewPage = () => {
   const benefits = [
     {
       icon: Shield,
-      title: 'NDIS Registered',
-      description: 'Fully compliant and registered provider'
+      title: 'Professional Care',
+      description: 'Committed to highest standards of service'
     },
     {
       icon: Heart,
@@ -47,17 +47,18 @@ const ServicesOverviewPage = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-black">
           <Image
-            src="/images/services/services-hero.jpg"
+            // src="/images/services/services-hero.jpg"
+            src="/images/hero/services-hero-1.jpg"
             alt="Our Services"
             fill
             priority
-            className="object-cover"
+            className="object-cover object-center"
             quality={90}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/85 to-white/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/55 to-white/95" />
         </div>
 
         <div className="absolute inset-0 opacity-10">
@@ -110,7 +111,7 @@ const ServicesOverviewPage = () => {
         </div>
 
         {/* Wavy Bottom */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
           <svg className="relative block w-full h-24" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff" />
           </svg>
@@ -167,7 +168,7 @@ const ServicesOverviewPage = () => {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-teal-600 to-amber-500 rounded-full mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From daily living assistance to independent living support, we offer comprehensive 
+              From daily living assistance to independent living support, we offer comprehensive
               services designed around your unique needs and goals
             </p>
           </motion.div>
@@ -176,7 +177,7 @@ const ServicesOverviewPage = () => {
             {SERVICES.map((service, index) => {
               const Icon = iconMap[service.icon] || Heart;
               const isAccent = service.color === 'accent';
-              
+
               return (
                 <motion.div
                   key={service.id}
@@ -189,18 +190,29 @@ const ServicesOverviewPage = () => {
                 >
                   <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all h-full flex flex-col border border-gray-100">
                     {/* Image/Icon Section */}
-                    <div className={`relative h-48 bg-gradient-to-br ${isAccent ? 'from-amber-500 to-orange-500' : 'from-teal-500 to-cyan-500'} overflow-hidden`}>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <motion.div
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <Icon className="w-20 h-20 text-white/90" />
-                        </motion.div>
+                    <div className="relative h-56 overflow-hidden">
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.4 }}
+                        className="w-full h-full"
+                      >
+                        <Image
+                          src={service.posterImage}
+                          alt={service.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </motion.div>
+
+                      {/* Gradient Overlay */}
+                      <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-80 group-hover:opacity-70 transition-opacity`} />
+
+                      {/* Icon */}
+                      <div className="absolute top-6 left-6">
+                        <div className="bg-white/20 backdrop-blur-md p-3 rounded-2xl">
+                          <Icon className="w-8 h-8 text-white" />
+                        </div>
                       </div>
-                      {/* Decorative elements */}
-                      <div className="absolute top-4 right-4 w-16 h-16 bg-white/20 rounded-full blur-xl"></div>
-                      <div className="absolute bottom-4 left-4 w-20 h-20 bg-white/20 rounded-full blur-xl"></div>
                     </div>
 
                     {/* Content Section */}
@@ -224,8 +236,8 @@ const ServicesOverviewPage = () => {
 
                       {/* CTA Button */}
                       <Link href={service.href}>
-                        <Button 
-                          className={`w-full ${isAccent ? 'bg-amber-600 hover:bg-amber-700' : 'bg-teal-600 hover:bg-teal-700'} text-white rounded-xl group/btn`}
+                        <Button
+                          className={`hover:cursor-pointer w-full ${isAccent ? 'bg-amber-600 hover:bg-amber-700' : 'bg-teal-600 hover:bg-teal-700'} text-white rounded-xl group/btn`}
                           size="lg"
                         >
                           Learn More
@@ -260,21 +272,21 @@ const ServicesOverviewPage = () => {
                 Why Choose <span className="text-teal-600">Our Services</span>
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-teal-600 to-amber-500 rounded-full mb-8"></div>
-              
+
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  At Endurakind, we understand that every person's journey is unique. That's why we 
-                  provide flexible, person-centered services designed around your individual needs, 
+                  At Endurakind, we understand that every person's journey is unique. That's why we
+                  provide flexible, person-centered services designed around your individual needs,
                   preferences, and goals.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Our experienced team is committed to empowering you to live as independently as 
+                  Our experienced team is committed to empowering you to live as independently as
                   possible, while providing the support you need to thrive in your community.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 pt-4">
                   {[
-                    'NDIS Registered Provider',
+                    'Compassionate Care',
                     'Experienced Team',
                     '24/7 Support Available',
                     'Person-Centered Approach'
@@ -296,7 +308,7 @@ const ServicesOverviewPage = () => {
               className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="/images/services/why-choose.jpg"
+                src="/images/services/why-choose-endurakind-services.jpg"
                 alt="Why Choose Endurakind"
                 fill
                 className="object-cover"
@@ -366,33 +378,35 @@ const ServicesOverviewPage = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 drop-shadow-lg">
               Ready to Get <span className="text-white">Started?</span>
             </h2>
-            
+
             <p className="text-xl md:text-2xl text-gray-800 mb-10 font-light drop-shadow">
               Contact us today to discuss which service is right for you
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link href="/contact">
-                  <Button 
+                  <Button
                     size="lg"
-                    className="bg-gray-900 hover:bg-gray-800 text-white px-10 py-7 text-lg rounded-2xl shadow-2xl group min-w-[220px]"
+                    className="hover:cursor-pointer bg-gray-900 hover:bg-gray-800 text-white px-10 py-7 text-lg rounded-2xl shadow-2xl group min-w-[220px]"
                   >
                     Contact Us Today
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
                   </Button>
                 </Link>
               </motion.div>
-              
+
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button 
+                <Link href={`tel:${SITE_CONFIG.phone}`}>
+                <Button
                   size="lg"
                   variant="outline"
-                  className="bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-900 px-10 py-7 text-lg rounded-2xl shadow-xl min-w-[220px]"
+                  className="hover:cursor-pointer bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-900 px-10 py-7 text-lg rounded-2xl shadow-xl min-w-[220px]"
                 >
                   <Phone className="mr-2 w-5 h-5" />
-                  +61493353976
+                  {SITE_CONFIG.phone}
                 </Button>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
