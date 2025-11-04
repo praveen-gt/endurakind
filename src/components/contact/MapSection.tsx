@@ -1,6 +1,5 @@
 'use client';
 
-import { MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function MapSection() {
@@ -20,7 +19,7 @@ export default function MapSection() {
             Our <span className="text-teal-600">Location</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We’re proudly based in Melbourne, serving communities across Victoria.
+            We're proudly based in Melbourne, serving communities across Victoria.
           </p>
         </motion.div>
 
@@ -28,14 +27,18 @@ export default function MapSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="rounded-3xl overflow-hidden shadow-2xl h-[400px] bg-gray-200 relative"
+          className="rounded-3xl overflow-hidden shadow-2xl h-[450px] bg-gray-200"
         >
-          {/* Replace with actual Google Maps embed */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <MapPin className="w-16 h-16 text-teal-600 mb-4" />
-            <p className="text-xl font-semibold text-gray-900">Melbourne, Victoria</p>
-            <p className="text-gray-600">Serving all of Victoria</p>
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d402587.5471853722!2d144.7234977984562!3d-37.97210656936051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1762243552887!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Melbourne Location"
+          />
         </motion.div>
       </div>
     </section>

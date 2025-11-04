@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { SITE_CONFIG } from '@/lib/constants';
 
 export default function CTASection() {
   return (
@@ -76,16 +78,19 @@ export default function CTASection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link href={`tel:${SITE_CONFIG.phone}`}>
                 <Button 
                   size="lg"
                   className="bg-gray-900 hover:bg-gray-800 text-white px-10 py-7 text-lg rounded-2xl shadow-2xl min-w-[200px]"
                 >
                   <Phone className="mr-2 w-5 h-5" />
-                  +61493353976
+                  {SITE_CONFIG.phone}
                 </Button>
+                </Link>
               </motion.div>
               
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link href={`mailto:${SITE_CONFIG.email}`}>
                 <Button 
                   size="lg"
                   variant="outline"
@@ -94,6 +99,7 @@ export default function CTASection() {
                   <Mail className="mr-2 w-5 h-5" />
                   Email Us
                 </Button>
+                </Link>
               </motion.div>
             </div>
           </motion.div>

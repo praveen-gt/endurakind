@@ -9,7 +9,7 @@ export default function HeroSection() {
         <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-black">
           <Image
-            src="/images/contact/contact-hero.jpg"
+            src="/images/hero/contact-banner.jpg"
             alt="Contact Endurakind"
             fill
             priority

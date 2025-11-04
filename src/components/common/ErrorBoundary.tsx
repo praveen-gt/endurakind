@@ -108,12 +108,12 @@ function DefaultErrorFallback({ error, resetError }: { error?: Error; resetError
 
           <div className="mt-6 text-sm text-gray-500">
             <p>If this problem persists, please contact us:</p>
-            <a 
+            <Link 
               href="mailto:info@newgenstrataservices.com.au"
               className="text-primary hover:text-primary/80 font-medium"
             >
               info@newgenstrataservices.com.au
-            </a>
+            </Link>
           </div>
         </CardContent>
       </Card>

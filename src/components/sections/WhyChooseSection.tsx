@@ -151,7 +151,7 @@ export default function WhyChooseSection() {
                   className="col-span-1 rounded-xl overflow-hidden shadow-lg h-40"
                 >
                   <Image
-                    src="/images/home/old-man-happy.jpg?q=80&w=400"
+                    src="/images/home/why-choose-image-1.jpg?q=80&w=400"
                     alt="Care and Support"
                     width={200}
                     height={200}
@@ -165,7 +165,7 @@ export default function WhyChooseSection() {
                   className="col-span-2 rounded-xl overflow-hidden shadow-lg h-40"
                 >
                   <Image
-                    src="/images/home/old-man-happy.jpg?q=80&w=600"
+                    src="/images/home/why-choose-image-2.jpg?q=80&w=600"
                     alt="Inclusive Community"
                     width={400}
                     height={200}
@@ -179,7 +179,7 @@ export default function WhyChooseSection() {
                   className="col-span-2 rounded-xl overflow-hidden shadow-lg h-48"
                 >
                   <Image
-                    src="/images/home/old-man-happy.jpg?q=80&w=600"
+                    src="/images/home/why-choose-image-3.jpg?q=80&w=600"
                     alt="Diverse Abilities"
                     width={400}
                     height={250}
@@ -193,7 +193,7 @@ export default function WhyChooseSection() {
                   className="col-span-1 rounded-xl overflow-hidden shadow-lg h-48"
                 >
                   <Image
-                    src="/images/home/old-man-happy.jpg?q=80&w=400"
+                    src="/images/home/why-choose-image-4.jpg?q=80&w=400"
                     alt="Respect and Dignity"
                     width={200}
                     height={250}

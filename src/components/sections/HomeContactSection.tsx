@@ -10,6 +10,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { SITE_CONFIG } from '@/lib/constants';
 import ContactForm from './ContactForm';
+import Link from 'next/link';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -70,12 +71,12 @@ export default function ContactSection() {
                   </div>
                   <div className="flex-1">
                     <h4 className="font-semibold text-gray-800 mb-1">Phone</h4>
-                    <a 
+                    <Link 
                       href={`tel:${SITE_CONFIG.phone}`}
                       className="text-teal-600 hover:text-teal-700 font-medium text-lg"
                     >
                       {SITE_CONFIG.phone}
-                    </a>
+                    </Link>
                     <p className="text-sm text-gray-500 mt-1 flex items-center gap-1">
                       <Clock className="w-3 h-3" />
                       Mon-Fri: 9AM - 5PM
@@ -91,12 +92,12 @@ export default function ContactSection() {
                   </div>
                   <div className="flex-1">
                     <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
-                    <a 
+                    <Link 
                       href={`mailto:${SITE_CONFIG.email}`}
                       className="text-amber-600 hover:text-amber-700 font-medium break-all"
                     >
                       {SITE_CONFIG.email}
-                    </a>
+                    </Link>
                     <p className="text-sm text-gray-500 mt-1">We'll respond within 24 hours</p>
                   </div>
                 </div>
@@ -127,12 +128,12 @@ export default function ContactSection() {
                   <p className="text-sm text-red-700 mb-2">
                     For urgent matters outside business hours:
                   </p>
-                  <a 
-                    href="tel:+61493353976" 
+                  <Link 
+                    href={`tel:${SITE_CONFIG.phone}`} 
                     className="text-red-800 font-bold text-lg hover:text-red-900 transition-colors"
                   >
-                    +61493353976
-                  </a>
+                    {SITE_CONFIG.phone}
+                  </Link>
                 </div>
               </div>
             </div>

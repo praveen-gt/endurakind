@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Sparkles, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SITE_CONFIG } from '@/lib/constants';
+import Link from 'next/link';
 
 export default function EnhancedCTASection() {
-const trustIndicators = [
+  const trustIndicators = [
     'Person-Centered Care',
     '24/7 Support Available',
     'Compassionate Team'
@@ -89,31 +90,35 @@ const trustIndicators = [
             Ready to Build Your Bridge to{' '}
             <span className="text-white">Independence?</span>
           </h2>
-          
+
           <p className="text-xl md:text-2xl text-gray-800 mb-10 font-light drop-shadow">
             Join the Endurakind community and take the first step towards achieving your goals
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button 
-                size="lg"
-                className="bg-gray-900 hover:bg-gray-800 text-white px-10 py-7 text-lg rounded-2xl shadow-2xl group min-w-[220px]"
-              >
-                Contact Us Today
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
-              </Button>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-gray-900 hover:bg-gray-800 text-white px-10 py-7 text-lg rounded-2xl shadow-2xl group min-w-[220px] hover:cursor-pointer"
+                >
+                  Contact Us Today
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                </Button>
+              </Link>
             </motion.div>
-            
+
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-900 px-10 py-7 text-lg rounded-2xl shadow-xl min-w-[220px]"
-              >
-                <Phone className="mr-2 w-5 h-5" />
-                {SITE_CONFIG.phone}
-              </Button>
+              <Link href={`tel:${SITE_CONFIG.phone}`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-900 px-10 py-7 text-lg rounded-2xl shadow-xl min-w-[220px] hover:cursor-pointer"
+                >
+                  <Phone className="mr-2 w-5 h-5" />
+                  {SITE_CONFIG.phone}
+                </Button>
+              </Link>
             </motion.div>
           </div>
 

@@ -2,14 +2,15 @@
 
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { 
-  CheckCircle, ArrowRight, Phone, Calendar, Shield, 
+import {
+  CheckCircle, ArrowRight, Phone, Calendar, Shield,
   Users, Clock, Target, Heart, Sparkles, Mail, User
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import ContactForm from './ContactForm';
+import { SITE_CONFIG } from '@/lib/constants';
 
 interface ServiceFeature {
   title: string;
@@ -49,7 +50,7 @@ interface ServicePageProps {
 const ServicePage = ({ service }: ServicePageProps) => {
   const heroRef = useRef(null);
   const contentRef = useRef(null);
-  
+
   const { scrollYProgress: heroScroll } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -123,8 +124,8 @@ const ServicePage = ({ service }: ServicePageProps) => {
     <div className="bg-white">
       {/* Hero Section - Modern Trendy Design */}
       {/* <section ref={heroRef} className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white"> */}
-        {/* Animated Background Gradient Orbs */}
-        {/* <div className="absolute inset-0">
+      {/* Animated Background Gradient Orbs */}
+      {/* <div className="absolute inset-0">
           <motion.div
             animate={{
               scale: [1, 1.2, 1],
@@ -139,21 +140,21 @@ const ServicePage = ({ service }: ServicePageProps) => {
           /> */}
 
 
-<section
-  ref={heroRef}
-  className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white"
->
-  {/* Background Image Layer */}
-  <div className="absolute inset-0">
-    <Image
-      src={service.heroImage || '/images/hero/disability1.jpg'}
-      alt={service.title}
-      fill
-      priority
-      quality={90}
-      className="object-cover object-center"
-    />
-    <div className="absolute inset-0 bg-white/85" /> {/* Optional dark overlay for contrast */}
+      <section
+        ref={heroRef}
+        className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white"
+      >
+        {/* Background Image Layer */}
+        <div className="absolute inset-0">
+          <Image
+            src={service.heroImage || '/images/hero/disability1.jpg'}
+            alt={service.title}
+            fill
+            priority
+            quality={90}
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-white/85" /> {/* Optional dark overlay for contrast */}
 
           <motion.div
             animate={{
@@ -275,15 +276,17 @@ const ServicePage = ({ service }: ServicePageProps) => {
                 className="flex flex-col sm:flex-row gap-4 "
               >
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button 
-                    size="lg"
-                    className="bg-gradient-to-r from-[#09778e] to-[#016938] hover:from-[#07687d] hover:to-[#015030] text-white px-10 py-7 text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all group"
-                  >
-                    Get Started Today
-                    <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button
+                      size="lg"
+                      className="hover:cursor-pointer bg-gradient-to-r from-[#09778e] to-[#016938] hover:from-[#07687d] hover:to-[#015030] text-white px-10 py-7 text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all group"
+                    >
+                      Get Started Today
+                      <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </motion.div>
-                
+
                 {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button 
                     size="lg"
@@ -323,7 +326,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
                   quality={90}
                 />
               </div>
-              
+
               {/* Decorative Element */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-400 rounded-lg z-0" />
             </motion.div>
@@ -338,25 +341,27 @@ const ServicePage = ({ service }: ServicePageProps) => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
                 Enhancing Everyday Living with {service.shortTitle}
               </h2>
-              
+
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
                   {service.longDescription || `At Endurakind, we understand that maintaining independence while receiving support is essential for your quality of life. Our ${service.shortTitle} service is designed to help you achieve your everyday goals with dignity and respect. We work alongside you to ensure that you can continue living life on your terms.`}
                 </p>
-                
+
                 <p className="text-gray-700 leading-relaxed mb-8">
                   Our approach is centered around your individual needs and preferences. We believe that everyone deserves compassionate, professional support that enhances their independence and wellbeing. Whether you need assistance with personal care, household tasks, or community participation, our experienced team is here to help.
                 </p>
               </div>
 
-              <Button 
-                size="lg"
-                variant="outline"
-                className="border-2 border-[#09778e] text-[#09778e] hover:bg-[#09778e]/10 px-6 py-6 text-base rounded-md"
-              >
-                MORE INFORMATION
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-[#09778e] text-[#09778e] hover:bg-[#09778e]/10 px-6 py-6 text-base rounded-md"
+                >
+                  MORE INFORMATION
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
             </motion.div>
           </div>
 
@@ -432,7 +437,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
                 Personal Care with Dignity
               </h2>
-              
+
               <p className="text-gray-700 leading-relaxed mb-6">
                 We approach all personal care with empathy and sensitivity. We assist with activities that you may need support with, such as showering, dressing, and grooming—always ensuring that your comfort and preferences are prioritized. Whether it's grooming, dressing, or managing your personal hygiene, we are here to help with dignity.
               </p>
@@ -474,7 +479,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
                 Efficient Household Management
               </h2>
-              
+
               <p className="text-gray-700 leading-relaxed mb-6">
                 A well-maintained home has a critical impact of your life. Our team assists with daily household tasks, ensuring your living space is safe, organized, and welcoming.
               </p>
@@ -511,14 +516,16 @@ const ServicePage = ({ service }: ServicePageProps) => {
               </div>
 
               <div className="mt-8">
-                <Button 
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-teal-600 text-teal-600 hover:bg-teal-50 px-6 py-6 text-base rounded-md"
-                >
-                  MORE INFORMATION
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-teal-600 text-teal-600 hover:bg-teal-50 px-6 py-6 text-base rounded-md"
+                  >
+                    MORE INFORMATION
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
               </div>
             </motion.div>
 
@@ -539,7 +546,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
                   quality={90}
                 />
               </div>
-              
+
               {/* Decorative Element */}
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-400 rounded-lg z-0" />
             </motion.div>
@@ -580,7 +587,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
                 Tailored Support Plans
               </h2>
-              
+
               <p className="text-gray-700 leading-relaxed mb-6">
                 We recognize that no two people are the same, and neither are their needs. Our support is flexible and designed around your lifestyle, ensuring that you receive the right assistance at the right time.
               </p>
@@ -608,7 +615,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
       <section className="relative py-20 md:py-32 overflow-hidden">
         {/* Background with Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-[#09778e]/5" />
-        
+
         {/* Decorative Elements */}
         <motion.div
           animate={{
@@ -676,7 +683,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
                   <div className="flex-1">
                     <div className="text-sm font-medium text-gray-500 mb-1">Call Us Directly</div>
                     <div className="text-xl font-bold text-gray-900 group-hover:text-[#09778e] transition-colors">
-                      +61493353976
+                      {SITE_CONFIG.phone}
                     </div>
                   </div>
                   <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#09778e] group-hover:translate-x-1 transition-all" />
@@ -694,7 +701,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
                   <div className="flex-1">
                     <div className="text-sm font-medium text-gray-500 mb-1">Email Us</div>
                     <div className="text-base font-bold text-gray-900 group-hover:text-[#09778e] transition-colors break-all">
-                      info@endurakind.com.au
+                      {SITE_CONFIG.email}
                     </div>
                   </div>
                   <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#09778e] group-hover:translate-x-1 transition-all" />
@@ -714,7 +721,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
                   <div className="flex-1">
                     <div className="text-sm font-medium text-gray-500 mb-1">Visit Us</div>
                     <div className="text-base font-bold text-gray-900">
-                      Melbourne, VIC
+                      {SITE_CONFIG.address}
                     </div>
                   </div>
                 </motion.div>
@@ -733,7 +740,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
             </motion.div>
 
             {/* Right Side - Contact Form */}
-          <ContactForm />
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -756,13 +763,15 @@ const ServicePage = ({ service }: ServicePageProps) => {
               </p>
             </div>
             <div className="flex-shrink-0">
-              <Button 
-                size="lg"
-                className="bg-white hover:bg-gray-100 text-[#09778e] px-8 py-6 text-base font-semibold rounded-lg shadow-lg transition-all hover:shadow-xl whitespace-nowrap"
-              >
-                CONTACT NOW
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-white hover:bg-gray-100 text-[#09778e] px-8 py-6 text-base font-semibold rounded-lg shadow-lg transition-all hover:shadow-xl whitespace-nowrap hover:cursor-pointer"
+                >
+                  CONTACT NOW
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

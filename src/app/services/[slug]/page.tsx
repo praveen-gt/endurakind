@@ -164,8 +164,11 @@ const EXTENDED_SERVICES = {
         description: 'Regular reviews and adjustments to ensure your support evolves with your goals'
       }
     ],
-    heroImage: '/images/services/sil-hero.jpg',
-    image: '/images/services/sil.jpg'
+    heroImage: '/images/services/daily-activities-hero.jpg',
+    image1: '/images/services/daily-activity-support-1.jpg',
+    image2: '/images/services/daily-activity-support-2.jpg',
+    image3: '/images/services/daily-activity-support-3.jpg',
+    image4: '/images/services/daily-activity-support-4.jpg',
   },
   'short-term-accommodation': {
     ...SERVICES[3],
@@ -210,8 +213,11 @@ const EXTENDED_SERVICES = {
         description: 'We ensure your stay met your expectations and plan for future respite needs'
       }
     ],
-    heroImage: '/images/services/respite-hero.jpg',
-    image: '/images/services/respite.jpg'
+    heroImage: '/images/services/community-participation-hero.jpg',
+    image1: '/images/services/community-participation-1.jpg',
+    image2: '/images/services/community-participation-2.jpg',
+    image3: '/images/services/daily-activity-support-3.jpg',
+    image4: '/images/services/daily-activity-support-4.jpg',
   },
   'support-coordination': {
     ...SERVICES[4],
@@ -256,8 +262,11 @@ const EXTENDED_SERVICES = {
         description: 'Regular check-ins, budget tracking, and preparation for plan reviews'
       }
     ],
-    heroImage: '/images/services/coordination-hero.jpg',
-    image: '/images/services/coordination.jpg'
+        heroImage: '/images/services/daily-activities-hero.jpg',
+    image1: '/images/services/daily-activity-support-1.jpg',
+    image2: '/images/services/daily-activity-support-2.jpg',
+    image3: '/images/services/daily-activity-support-3.jpg',
+    image4: '/images/services/daily-activity-support-4.jpg',
   }
 };
 

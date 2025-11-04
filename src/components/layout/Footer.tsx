@@ -247,7 +247,7 @@ const handleNewsletterSubmit = async (e: React.FormEvent) => {
             <h4 className="font-bold text-lg mb-4 text-white">Contact Us</h4>
             <ul className="space-y-4">
               <li>
-                <a 
+                <Link 
                   href={`tel:${SITE_CONFIG.phone}`} 
                   className="flex items-start gap-3 text-gray-400 hover:text-teal-400 transition-colors group"
                 >
@@ -258,7 +258,7 @@ const handleNewsletterSubmit = async (e: React.FormEvent) => {
                     <p className="text-xs text-gray-500 mb-1">Call Us</p>
                     <p className="font-medium text-white">{SITE_CONFIG.phone}</p>
                   </div>
-                </a>
+                </Link>
               </li>
               
               <li>
@@ -332,17 +332,17 @@ const handleNewsletterSubmit = async (e: React.FormEvent) => {
                 Terms & Conditions
               </Link>
               <Link 
-                href="/accessibility" 
+                href="/referral-form" 
                 className="text-gray-400 hover:text-teal-400 transition-colors"
               >
-                Accessibility
+                Referral Form
               </Link>
-              <Link 
+              {/* <Link 
                 href="/sitemap" 
                 className="text-gray-400 hover:text-teal-400 transition-colors"
               >
                 Sitemap
-              </Link>
+              </Link> */}
             </motion.div>
           </div>
         </div>
