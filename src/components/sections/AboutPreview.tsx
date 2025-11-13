@@ -43,7 +43,8 @@ export default function UpdatedAboutSection() {
           >
             <div className="relative h-[500px] lg:h-[680px] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/home/caring-support.jpg"
+                // src="/images/home/caring-support.jpg"
+                src="/images/home/about-section-image.jpg"
                 alt="Caring support"
                 fill
                 className="object-cover"

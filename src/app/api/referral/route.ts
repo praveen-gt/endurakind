@@ -246,7 +246,7 @@ function generateReferrerConfirmationEmail(data: ReferralFormData): string {
             
             <p>Thank you for helping us connect individuals with the support they need.</p>
             
-            <p>Warm regards,<br><strong>The Team at Endurakind</strong></p>
+            <p>Warm regards,<br><strong>Team Endurakind</strong></p>
           </div>
           <div class="footer">
             <p>If you did not make this referral, please contact us immediately.</p>

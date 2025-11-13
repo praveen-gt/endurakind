@@ -1,56 +1,37 @@
 'use client';
 
 import React from 'react';
-import { Heart, Users, Target, Shield, Award, Clock, TrendingUp, Phone } from 'lucide-react';
+import {
+  Heart,
+  Users,
+  Target,
+  Shield,
+  // Award, 
+  // Clock, 
+  // TrendingUp, 
+  Phone
+} from 'lucide-react';
 import { HeroSection } from '@/components/about/HeroSection';
-import { StatsGrid } from '@/components/about/StatsGrid';
+// import { StatsGrid } from '@/components/about/StatsGrid';
 import { StorySection } from '@/components/about/StorySection';
 import { Timeline } from '@/components/about/Timeline';
 import { ValuesGrid } from '@/components/about/ValuesGrid';
-import { TeamGrid } from '@/components/about/TeamGrid';
+// import { TeamGrid } from '@/components/about/TeamGrid';
 import { CTASection } from '@/components/about/CTASection';
 
 const AboutPage = () => {
-    // Story section data
-  // const storyParagraphs = [
-  //   'Endurakind was founded with a simple yet powerful vision: to create an inclusive community where every person, regardless of ability, can live independently and thrive.',
-  //   'Our journey began over a decade ago when our founder recognized the need for truly person-centered disability support services. What started as a small team with big dreams has grown into a comprehensive support network serving hundreds of families across Victoria.',
-  //   'Today, we\'re proud to be one of Melbourne\'s most trusted disability support providers, but our core values remain unchanged: compassion, inclusivity, empowerment, and integrity guide everything we do.'
-  // ];
 
   const storyParagraphs = [
-    'Endurakind is dedicated to fostering a community that celebrates individuality, inclusion, and human potential. We believe every person deserves the opportunity to live a meaningful, empowered life—regardless of ability, background, or circumstance.',
-    'Our mission is to create supportive environments where kindness, understanding, and opportunity thrive. At Endurakind, we are guided by compassion, integrity, and the shared goal of helping each individual live with dignity and purpose.'
+    'Endurakind was founded with a simple yet powerful vision: to create a truly inclusive community where every individual can live independently and thrive.',
+    'Our story began when our founder recognized that disability support needed to go beyond basic assistance—it needed to be about genuine connection, empowerment, and human dignity.',
+    'What started as a small local initiative has grown into a compassionate network supporting individuals and families across Victoria, while staying true to our core values of empathy, inclusion, and integrity.'
   ];
 
-const storyBadges = [
-  { text: 'Empowering Independence' },
-  { text: 'Supporting Every Ability' }
-];
+  const storyBadges = [
+    { text: 'Empowering Independence' },
+    { text: 'Supporting Every Ability' }
+  ];
 
-  // Timeline data
-  // const milestones = [
-  //   {
-  //     year: '2014',
-  //     title: 'The Beginning',
-  //     description: 'Endurakind was founded with a vision to create truly person-centered care in Victoria.'
-  //   },
-  //   {
-  //     year: '2017',
-  //     title: 'Growing Impact',
-  //     description: 'Expanded our services to support over 100 individuals and families across Melbourne.'
-  //   },
-  //   {
-  //     year: '2020',
-  //     title: 'Building Bridges',
-  //     description: 'Launched our community programs and 24/7 support services during challenging times.'
-  //   },
-  //   {
-  //     year: '2025',
-  //     title: 'Today & Beyond',
-  //     description: 'Supporting 200+ families with a team of 50+ dedicated professionals, looking to the future.'
-  //   }
-  // ];
 
   const milestones = [
     {
@@ -99,48 +80,48 @@ const storyBadges = [
   ];
 
   // Team data
-  const team = [
-    {
-      name: 'Sarah Johnson',
-      role: 'Founder & Director',
-      image: '/images/team/sarah.jpg',
-      bio: 'Passionate about creating inclusive communities and empowering individuals.',
-      social: {
-        linkedin: 'https://linkedin.com',
-        email: 'sarah@endurakind.com.au'
-      }
-    },
-    {
-      name: 'Michael Chen',
-      role: 'Support Coordinator',
-      image: '/images/team/michael.jpg',
-      bio: 'Dedicated to personalized care plans and client success.',
-      social: {
-        linkedin: 'https://linkedin.com',
-        email: 'michael@endurakind.com.au'
-      }
-    },
-    {
-      name: 'Emma Williams',
-      role: 'Care Specialist',
-      image: '/images/team/emma.jpg',
-      bio: 'Expert in disability support services with 8+ years experience.',
-      social: {
-        linkedin: 'https://linkedin.com',
-        email: 'emma@endurakind.com.au'
-      }
-    },
-    {
-      name: 'David Brown',
-      role: 'Community Liaison',
-      image: '/images/team/david.jpg',
-      bio: 'Building lasting community connections and partnerships.',
-      social: {
-        linkedin: 'https://linkedin.com',
-        email: 'david@endurakind.com.au'
-      }
-    }
-  ];
+  // const team = [
+  //   {
+  //     name: 'Sarah Johnson',
+  //     role: 'Founder & Director',
+  //     image: '/images/team/sarah.jpg',
+  //     bio: 'Passionate about creating inclusive communities and empowering individuals.',
+  //     social: {
+  //       linkedin: 'https://linkedin.com',
+  //       email: 'sarah@endurakind.com.au'
+  //     }
+  //   },
+  //   {
+  //     name: 'Michael Chen',
+  //     role: 'Support Coordinator',
+  //     image: '/images/team/michael.jpg',
+  //     bio: 'Dedicated to personalized care plans and client success.',
+  //     social: {
+  //       linkedin: 'https://linkedin.com',
+  //       email: 'michael@endurakind.com.au'
+  //     }
+  //   },
+  //   {
+  //     name: 'Emma Williams',
+  //     role: 'Care Specialist',
+  //     image: '/images/team/emma.jpg',
+  //     bio: 'Expert in disability support services with 8+ years experience.',
+  //     social: {
+  //       linkedin: 'https://linkedin.com',
+  //       email: 'emma@endurakind.com.au'
+  //     }
+  //   },
+  //   {
+  //     name: 'David Brown',
+  //     role: 'Community Liaison',
+  //     image: '/images/team/david.jpg',
+  //     bio: 'Building lasting community connections and partnerships.',
+  //     social: {
+  //       linkedin: 'https://linkedin.com',
+  //       email: 'david@endurakind.com.au'
+  //     }
+  //   }
+  // ];
 
   // CTA data
   const ctaButtons = [
@@ -170,7 +151,7 @@ const storyBadges = [
         title='About <span class="text-teal-600">Endurakind</span>'
         subtitle='Building bridges to independence through compassionate,<br class="hidden md:block" />person-centered care since 2014'
         // backgroundImage="/images/about/about-hero.jpg"
-        backgroundImage="/images/hero/disability1.jpg"
+        backgroundImage="/images/hero/disability2-1.jpg"
       />
 
       {/* About Intro Section (replaces StatsGrid) */}

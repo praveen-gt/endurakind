@@ -9,6 +9,7 @@ const contactInfo = [
     icon: Phone,
     title: 'Phone',
     details: SITE_CONFIG.phone,
+    href: `tel:${SITE_CONFIG.phone}`,
     subtext: 'Mon-Fri, 9am-5pm',
     color: 'from-teal-500 to-cyan-500'
   },
@@ -16,6 +17,7 @@ const contactInfo = [
     icon: Mail,
     title: 'Email',
     details: SITE_CONFIG.email,
+    href: `mailto:${SITE_CONFIG.email}`,
     subtext: 'We reply within 24 hours',
     color: 'from-blue-500 to-indigo-500'
   },
@@ -54,7 +56,18 @@ export default function ContactInfoSection() {
                 <info.icon className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">{info.title}</h3>
-              <p className="text-teal-600 font-semibold mb-1">{info.details}</p>
+
+              {info.href ? (
+                <a
+                  href={info.href}
+                  className="text-teal-600 font-semibold mb-1 block hover:text-theme-orange transition-colors"
+                >
+                  {info.details}
+                </a>
+              ) : (
+                <p className="text-teal-600 font-semibold mb-1">{info.details}</p>
+              )}
+
               <p className="text-sm text-gray-600">{info.subtext}</p>
             </motion.div>
           ))}

@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
       html: `
         <h2>Welcome to Endurakind!</h2>
         <p>Thanks for joining our newsletter. We'll keep you updated with the latest news, tips, and updates.</p>
-        <p>— The Endurakind Team</p>
+        <p>Team Endurakind</p>
       `,
     };
 

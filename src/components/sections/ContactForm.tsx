@@ -130,81 +130,90 @@ export default function ContactForm() {
   // ✅ Main Form
   return (
 
-          <motion.div
-          {...scrollReveal}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-3"
-          >
-            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h3>
-              <p className="text-gray-600 mb-8">Fill out the form below and we'll get back to you shortly.</p>
+    <motion.div
+      {...scrollReveal}
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      className="lg:col-span-3"
+    >
+      <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100">
+        <h3 className="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h3>
+        <p className="text-gray-600 mb-8">Fill out the form below and we'll get back to you shortly.</p>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="name">Full Name *</Label>
-                    <Input {...register('name')} placeholder="John Doe" className="h-12" />
-                    {errors.name && <p className="text-sm text-red-600 mt-1">{errors.name.message}</p>}
-                  </div>
-
-                  <div>
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input {...register('email')} placeholder="john@example.com" className="h-12" />
-                    {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>}
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
-                    <Input {...register('phone')} placeholder="0400 000 000" className="h-12" />
-                    {errors.phone && <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>}
-                  </div>
-
-                  <div>
-                    <Label htmlFor="subject">Subject *</Label>
-                    <Input {...register('subject')} placeholder="How can we help?" className="h-12" />
-                    {errors.subject && <p className="text-sm text-red-600 mt-1">{errors.subject.message}</p>}
-                  </div>
-                </div>
-
-                <div>
-                  <Label htmlFor="message">Message *</Label>
-                  <Textarea {...register('message')} rows={6} placeholder="Tell us about your needs..." />
-                  {errors.message && <p className="text-sm text-red-600 mt-1">{errors.message.message}</p>}
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  size="lg"
-                  className="w-full bg-teal-600 hover:bg-teal-700 text-white h-14 text-lg rounded-xl group shadow-lg hover:shadow-xl transition-all disabled:opacity-50"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                        className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"
-                      />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="mr-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
-
-                <p className="text-sm text-gray-500 text-center">
-                  <CheckCircle className="w-4 h-4 inline mr-1 text-teal-600" />
-                  Your information is secure and will never be shared.
-                </p>
-              </form>
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <Label htmlFor="name">Full Name *</Label>
+              <Input {...register('name')} placeholder="John Doe" className="h-12" />
+              {errors.name && <p className="text-sm text-red-600 mt-1">{errors.name.message}</p>}
             </div>
-          </motion.div>
+
+            <div>
+              <Label htmlFor="email">Email Address *</Label>
+              <Input {...register('email')} placeholder="john@example.com" className="h-12" />
+              {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>}
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <Label htmlFor="phone">Phone Number *</Label>
+              <Input
+                {...register('phone')}
+                inputMode="numeric"
+                placeholder="0400 000 000"
+                className="h-12"
+                onInput={(e) => {
+                  const target = e.target as HTMLInputElement;
+                  target.value = target.value.replace(/\D/g, ''); // removes anything not a digit
+                }}
+              />
+              {errors.phone && <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>}
+            </div>
+
+            <div>
+              <Label htmlFor="subject">Subject *</Label>
+              <Input {...register('subject')} placeholder="How can we help?" className="h-12" />
+              {errors.subject && <p className="text-sm text-red-600 mt-1">{errors.subject.message}</p>}
+            </div>
+          </div>
+
+          <div>
+            <Label htmlFor="message">Message *</Label>
+            <Textarea {...register('message')} rows={6} placeholder="Tell us about your needs..." />
+            {errors.message && <p className="text-sm text-red-600 mt-1">{errors.message.message}</p>}
+          </div>
+
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            size="lg"
+            className="w-full bg-teal-600 hover:bg-teal-700 text-white h-14 text-lg rounded-xl group shadow-lg hover:shadow-xl transition-all disabled:opacity-50"
+          >
+            {isSubmitting ? (
+              <>
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                  className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"
+                />
+                Sending...
+              </>
+            ) : (
+              <>
+                <Send className="mr-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Send Message
+              </>
+            )}
+          </Button>
+
+          <p className="text-sm text-gray-500 text-center">
+            <CheckCircle className="w-4 h-4 inline mr-1 text-teal-600" />
+            Your information is secure and will never be shared.
+          </p>
+        </form>
+      </div>
+    </motion.div>
   );
 }

@@ -10,10 +10,15 @@ import Image from 'next/image';
 
 // Replace these paths with your actual image paths
 const HERO_IMAGES = [
-  '/images/hero/disability1.jpg',
-  '/images/hero/disability2.jpg',
-  '/images/hero/disability3.jpg',
+  '/images/hero/hero-image-1.jpg',
+  '/images/hero/hero-image-2.jpg',
+  '/images/hero/hero-image-3.jpg',
 ];
+// const HERO_IMAGES = [
+//   '/images/hero/disability1.jpg',
+//   '/images/hero/disability2.jpg',
+//   '/images/hero/disability3.jpg',
+// ];
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

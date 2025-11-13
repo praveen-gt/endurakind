@@ -111,10 +111,16 @@ export default function Header() {
                 <div key={link.name} className="relative group">
                   {link.submenu ? (
                     <>
-                      <button className="flex items-center gap-1 text-gray-700 hover:text-theme-green transition-colors font-medium py-2">
+                      {/* <button className="flex items-center gap-1 text-gray-700 hover:text-theme-green transition-colors font-medium py-2">
                         {link.name}
                         <ChevronDown className="w-4 h-4" />
-                      </button>
+                      </button> */}
+                      <div className="flex items-center gap-1 text-gray-700 hover:text-theme-green transition-colors font-medium py-2">
+                        <Link href={link.href} className="hover:text-theme-green">
+                          {link.name}
+                        </Link>
+                        <ChevronDown className="w-4 h-4" />
+                      </div>
                       <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                         <div className="bg-white rounded-lg shadow-lg py-2 min-w-[250px] border border-gray-100">
                           {link.submenu.map((item) => (
@@ -140,9 +146,9 @@ export default function Header() {
                 </div>
               ))}
               <Link href="/contact" passHref>
-              <Button className="btn-endurakind hover:cursor-pointer">
-                Get Started
-              </Button>
+                <Button className="btn-endurakind hover:cursor-pointer">
+                  Get Started
+                </Button>
               </Link>
             </div>
 
@@ -248,9 +254,9 @@ export default function Header() {
                 ))}
 
                 <Link href="/contact" passHref>
-                <Button className="btn-endurakind w-full mt-2 hover:cursor-pointer">
-                  Get Started
-                </Button>
+                  <Button className="btn-endurakind w-full mt-2 hover:cursor-pointer">
+                    Get Started
+                  </Button>
                 </Link>
               </div>
             </div>

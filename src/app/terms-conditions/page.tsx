@@ -123,7 +123,7 @@ export default function TermsAndConditions() {
                 {/* Footer Note */}
                 <div className="mt-16 pt-8 border-t border-gray-200 text-center">
                     <p className="text-gray-600 text-sm">
-                        Last Updated: November 2024
+                        Last Updated: July 2025
                     </p>
                     <p className="text-gray-600 text-sm mt-2">
                         Endurakind - Melbourne, Victoria, Australia

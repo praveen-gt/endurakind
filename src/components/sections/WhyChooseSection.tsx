@@ -207,7 +207,7 @@ export default function WhyChooseSection() {
                   className="col-span-3 rounded-xl overflow-hidden shadow-xl relative h-52"
                 >
                   <Image
-                    src="/images/home/old-man-happy.jpg?q=80&w=900"
+                    src="/images/home/why-choose-image-5.jpg?q=80&w=900"
                     alt="Unity and Care"
                     width={600}
                     height={300}

@@ -116,7 +116,7 @@ function generateCustomerEmailTemplate(data: ContactFormData): string {
             <p><em>${data.subject}</em></p>
             <p>${data.message}</p>
             <p>We appreciate your interest and look forward to assisting you.</p>
-            <p>Kind regards,<br><strong>The Team at Endurakind</strong></p>
+            <p>Kind regards,<br><strong>Team Endurakind</strong></p>
           </div>
           <div class="footer">
             <p>This email was sent from your contact form submission.</p>
