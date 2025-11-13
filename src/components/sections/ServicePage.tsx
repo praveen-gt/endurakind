@@ -122,24 +122,6 @@ const ServicePage = ({ service }: ServicePageProps) => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section - Modern Trendy Design */}
-      {/* <section ref={heroRef} className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white"> */}
-      {/* Animated Background Gradient Orbs */}
-      {/* <div className="absolute inset-0">
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute top-20 -right-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#09778e]/30 to-[#016938]/20 blur-3xl"
-          /> */}
-
-
       <section
         ref={heroRef}
         className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white"
@@ -233,17 +215,6 @@ const ServicePage = ({ service }: ServicePageProps) => {
 
             {/* Main Content */}
             <div className="">
-              {/* Badge */}
-              {/* <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#09778e]/10 backdrop-blur-sm border border-[#09778e]/20 mb-8"
-              >
-                <Sparkles className="w-4 h-4 text-[#09778e]" />
-                <span className="text-sm font-semibold text-[#09778e]">Premium Service</span>
-              </motion.div> */}
-
               {/* Main Heading - Large & Bold */}
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
@@ -286,23 +257,10 @@ const ServicePage = ({ service }: ServicePageProps) => {
                     </Button>
                   </Link>
                 </motion.div>
-
-                {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="border-2 border-[#09778e] text-[#09778e] hover:bg-[#09778e]/5 px-10 py-7 text-lg font-semibold rounded-2xl backdrop-blur-sm bg-white/50"
-                  >
-                    <Phone className="mr-2 w-5 h-5" />
-                    +61493353976
-                  </Button>
-                </motion.div> */}
               </motion.div>
-
             </div>
           </div>
         </div>
-
       </section>
 
       {/* Main Content Section */}
@@ -315,9 +273,9 @@ const ServicePage = ({ service }: ServicePageProps) => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              className="relative w-full"
             >
-              <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl z-10">
+              {/* <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl z-10">
                 <Image
                   src={service.image1 || `/images/hero/disability1.jpg`}
                   alt={service.title}
@@ -325,11 +283,21 @@ const ServicePage = ({ service }: ServicePageProps) => {
                   className="object-cover"
                   quality={90}
                 />
-              </div>
+              </div> */}
 
-              {/* Decorative Element */}
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-400 rounded-lg z-0" />
-            </motion.div>
+              <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-xl">
+          <Image
+            src={service.image1 || `/images/hero/disability1.jpg`}
+            alt={service.title}
+            fill
+            className="object-cover"
+            quality={90}
+          />
+        </div>
+
+        {/* Decorative Element - Only show on large screens */}
+        <div className="hidden xl:block absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-400 rounded-lg -z-10" />
+      </motion.div>
 
             {/* Right Column - Content */}
             <motion.div
@@ -364,44 +332,45 @@ const ServicePage = ({ service }: ServicePageProps) => {
               </Link>
             </motion.div>
           </div>
-
-          {/* Service Cards Grid - Light Green Background Section - Full Width */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-gradient-to-br from-[#09778e]/10 to-[#016938]/5 py-16"
-          >
-            <div className="container-custom px-4 sm:px-6 lg:px-8">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {serviceCards.map((card, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                    className="text-center"
-                  >
-                    <div className="mb-4 flex justify-center">
-                      <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-[#09778e]/20">
-                        <card.icon className="w-8 h-8 text-[#09778e]" />
-                      </div>
-                    </div>
-                    <h3 className="text-lg font-bold mb-3 text-gray-900">
-                      {card.title}
-                    </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      {card.description}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
+
+      {/* Service Cards Grid - Light Green Background Section - Full Width */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        // className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-gradient-to-br from-[#09778e]/10 to-[#016938]/5 py-16"
+        className="w-full bg-gradient-to-br from-[#09778e]/10 to-[#016938]/5 py-12 md:py-16 overflow-hidden"
+      >
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {serviceCards.map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="text-center"
+              >
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-[#09778e]/20">
+                    <card.icon className="w-8 h-8 text-[#09778e]" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-gray-900">
+                  {card.title}
+                </h3>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  {card.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
 
       {/* Personal Care Section */}
       <section className="py-20 bg-gray-50">
@@ -548,7 +517,7 @@ const ServicePage = ({ service }: ServicePageProps) => {
               </div>
 
               {/* Decorative Element */}
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-400 rounded-lg z-0" />
+              <div className="hidden xl:block absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-400 rounded-lg z-0" />
             </motion.div>
           </div>
         </div>
