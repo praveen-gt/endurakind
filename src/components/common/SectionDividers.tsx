@@ -26,72 +26,6 @@ export function CurvedDivider({ color = "#ffffff", flip = false }) {
   );
 }
 
-// Accessibility Icons Divider
-// export function AccessibilityDivider({ flip = false }) {
-//   return (
-//     <div className={`absolute ${flip ? 'bottom-0' : 'top-0'} left-0 w-full h-24 overflow-hidden`}>
-//       <div className="absolute inset-0 bg-gradient-to-r from-teal-50 via-white to-amber-50 opacity-60" />
-//       <div className="absolute inset-0 flex items-center justify-around px-8 opacity-20">
-//         {/* Wheelchair Symbol */}
-//         <motion.svg 
-//           animate={{ y: [0, -10, 0] }}
-//           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-//           className="w-12 h-12 text-teal-600" 
-//           fill="currentColor" 
-//           viewBox="0 0 24 24"
-//         >
-//           <path d="M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M21 9H15V11H17.8C17.3 13.2 15.4 14.9 13 14.9C10.3 14.9 8.1 12.7 8.1 10S10.3 5.1 13 5.1C13.7 5.1 14.4 5.3 15 5.6L16.7 3.9C15.6 3.3 14.3 3 13 3C9.1 3 6 6.1 6 10S9.1 17 13 17C16.9 17 20 13.9 20 10V9H21Z"/>
-//         </motion.svg>
-
-//         {/* Heart Hands Symbol */}
-//         <motion.svg 
-//           animate={{ scale: [1, 1.1, 1] }}
-//           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-//           className="w-12 h-12 text-pink-500" 
-//           fill="currentColor" 
-//           viewBox="0 0 24 24"
-//         >
-//           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-//         </motion.svg>
-
-//         {/* Accessibility Symbol */}
-//         <motion.svg 
-//           animate={{ rotate: [0, 5, -5, 0] }}
-//           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-//           className="w-12 h-12 text-blue-600" 
-//           fill="currentColor" 
-//           viewBox="0 0 24 24"
-//         >
-//           <circle cx="12" cy="5" r="2"/>
-//           <path d="M12 7c-1.1 0-2 .9-2 2v4h1.5v7h3v-7H16V9c0-1.1-.9-2-2-2h-2z"/>
-//         </motion.svg>
-
-//         {/* Support Hands */}
-//         <motion.svg 
-//           animate={{ y: [0, 8, 0] }}
-//           transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-//           className="w-12 h-12 text-amber-500" 
-//           fill="currentColor" 
-//           viewBox="0 0 24 24"
-//         >
-//           <path d="M20 13c-1.1 0-2 .9-2 2v4h-2v-4c0-2.21 1.79-4 4-4v2M2 15c0-1.1.9-2 2-2v-2c-2.21 0-4 1.79-4 4v4h2v-4M12 2C9.79 2 8 3.79 8 6s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4m0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2m0 4c-2.67 0-8 1.34-8 4v4h16v-4c0-2.66-5.33-4-8-4z"/>
-//         </motion.svg>
-
-//         {/* Inclusive Circle */}
-//         <motion.svg 
-//           animate={{ scale: [1, 1.15, 1] }}
-//           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-//           className="w-12 h-12 text-teal-600" 
-//           fill="currentColor" 
-//           viewBox="0 0 24 24"
-//         >
-//           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7v-2z"/>
-//         </motion.svg>
-//       </div>
-//     </div>
-//   );
-// }
-
 
 export function AccessibilityDivider({ flip = false }) {
   return (
@@ -108,7 +42,7 @@ export function AccessibilityDivider({ flip = false }) {
           alt="Wheelchair Symbol"
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="w-12 h-12 object-contain"
+          className="w-8 h-8 md:w-12 md:h-12 object-contain"
         />
 
         {/* 💖 Heart Hands */}
@@ -117,7 +51,7 @@ export function AccessibilityDivider({ flip = false }) {
           alt="Heart Hands Symbol"
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-12 h-12 object-contain"
+          className="w-8 h-8 md:w-12 md:h-12 object-contain"
         />
 
         {/* 🧑‍🦽 Accessibility Symbol */}
@@ -126,7 +60,7 @@ export function AccessibilityDivider({ flip = false }) {
           alt="Accessibility Symbol"
           animate={{ rotate: [0, 5, -5, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="w-12 h-12 object-contain"
+          className="w-8 h-8 md:w-12 md:h-12 object-contain"
         />
 
         {/* 🤝 Support Hands */}
@@ -135,7 +69,7 @@ export function AccessibilityDivider({ flip = false }) {
           alt="Support Hands Symbol"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-12 h-12 object-contain"
+          className="w-8 h-8 md:w-12 md:h-12 object-contain"
         />
 
         {/* 🌈 Inclusive Circle */}
@@ -144,7 +78,7 @@ export function AccessibilityDivider({ flip = false }) {
           alt="Inclusive Circle Symbol"
           animate={{ scale: [1, 1.15, 1] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="w-12 h-12 object-contain"
+          className="w-8 h-8 md:w-12 md:h-12 object-contain"
         />
       </div>
     </div>

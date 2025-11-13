@@ -3,22 +3,16 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Heart } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { fadeInUp } from '@/lib/animations';
 import Image from 'next/image';
 
-// Replace these paths with your actual image paths
 const HERO_IMAGES = [
   '/images/hero/hero-image-1.jpg',
   '/images/hero/hero-image-2.jpg',
   '/images/hero/hero-image-3.jpg',
 ];
-// const HERO_IMAGES = [
-//   '/images/hero/disability1.jpg',
-//   '/images/hero/disability2.jpg',
-//   '/images/hero/disability3.jpg',
-// ];
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -75,10 +69,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
             className="inline-block mb-6"
           >
-            {/* <div className="w-20 h-20 bg-gradient-to-br from-white-400 to-white-500 rounded-2xl flex items-center justify-center shadow-2xl"> */}
-            {/* <Heart className="w-10 h-10 text-white fill-white" /> */}
             <Image src={'/images/hero/wheel-icon.png'} alt="Endurakind wheel icon" width={100} height={100} className="" />
-            {/* </div> */}
           </motion.div>
 
           {/* Main Heading */}

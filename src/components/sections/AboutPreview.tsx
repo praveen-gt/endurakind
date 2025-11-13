@@ -7,7 +7,7 @@ import { scrollReveal } from '@/lib/animations';
 import Image from 'next/image';
 import { AccessibilityDivider, CurvedDivider,  } from '@/components/common/SectionDividers';
 
-export default function UpdatedAboutSection() {
+export default function AboutSection() {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,

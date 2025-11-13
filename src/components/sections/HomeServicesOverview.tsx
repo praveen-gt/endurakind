@@ -6,7 +6,7 @@ import { Users, HeartHandshake, Home, Palmtree, ClipboardList, ArrowRight, Spark
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import { InclusiveSymbolsDivider } from '../common/SectionDividers';
+// import { InclusiveSymbolsDivider } from '../common/SectionDividers';
 
 const services = [
   {
@@ -56,7 +56,7 @@ const services = [
   },
 ];
 
-export default function EnhancedServicesSection() {
+export default function ServicesSection() {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
