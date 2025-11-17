@@ -262,7 +262,7 @@ const handleNewsletterSubmit = async (e: React.FormEvent) => {
               </li>
               
               <li>
-                <a 
+                <Link
                   href={`mailto:${SITE_CONFIG.email}`} 
                   className="flex items-start gap-3 text-gray-400 hover:text-teal-400 transition-colors group"
                 >
@@ -273,7 +273,7 @@ const handleNewsletterSubmit = async (e: React.FormEvent) => {
                     <p className="text-xs text-gray-500 mb-1">Email Us</p>
                     <p className="font-medium text-white text-sm break-all">{SITE_CONFIG.email}</p>
                   </div>
-                </a>
+                </Link>
               </li>
               
               <li>
@@ -349,7 +349,7 @@ const handleNewsletterSubmit = async (e: React.FormEvent) => {
       </div>
 
       {/* Back to Top Button */}
-      <motion.button
+      {/* <motion.button
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -358,7 +358,7 @@ const handleNewsletterSubmit = async (e: React.FormEvent) => {
         aria-label="Back to top"
       >
         <ArrowRight className="w-5 h-5 -rotate-90 group-hover:-translate-y-1 transition-transform" />
-      </motion.button>
+      </motion.button> */}
     </footer>
   );
 }

@@ -276,13 +276,13 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const service = EXTENDED_SERVICES[params.slug as keyof typeof EXTENDED_SERVICES];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+
+  const service = EXTENDED_SERVICES[slug as keyof typeof EXTENDED_SERVICES];
   
   if (!service) {
-    return {
-      title: 'Service Not Found',
-    };
+    return { title: 'Service Not Found' };
   }
 
   return {
@@ -291,8 +291,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
-  const service = EXTENDED_SERVICES[params.slug as keyof typeof EXTENDED_SERVICES];
+export default async function ServiceDetailPage({ params }: { params: { slug: string } }) {
+  const { slug } = await params;
+  // const service = EXTENDED_SERVICES[params.slug as keyof typeof EXTENDED_SERVICES];
+  const service = EXTENDED_SERVICES[slug as keyof typeof EXTENDED_SERVICES];
+
 
   if (!service) {
     notFound();

@@ -17,7 +17,8 @@ import { StorySection } from '@/components/about/StorySection';
 import { Timeline } from '@/components/about/Timeline';
 import { ValuesGrid } from '@/components/about/ValuesGrid';
 // import { TeamGrid } from '@/components/about/TeamGrid';
-import { CTASection } from '@/components/about/CTASection';
+// import { CTASection } from '@/components/about/CTASection';
+import CTASection from '@/components/sections/HomeCTASection';
 
 const AboutPage = () => {
 
@@ -215,13 +216,15 @@ const AboutPage = () => {
       /> */}
 
       {/* CTA Section */}
-      <CTASection
+      {/* <CTASection
         title='Ready to Start Your <span class="text-white">Journey?</span>'
         subtitle="Contact us today to learn how we can support you or your loved ones"
         buttons={ctaButtons}
         trustIndicators={trustIndicators}
         backgroundColor="amber"
-      />
+      /> */}
+
+      <CTASection />
     </div>
   );
 };

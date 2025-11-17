@@ -16,9 +16,10 @@ const nextConfig: NextConfig = {
         hostname: "via.placeholder.com",
       },
     ],
+    // Optional: Add these for better performance
+    formats: ['image/webp', 'image/avif'],
   },
   reactStrictMode: true,
-  swcMinify: true,
   typescript: {
     ignoreBuildErrors: true,
   },

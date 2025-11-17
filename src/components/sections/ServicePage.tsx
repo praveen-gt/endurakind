@@ -133,10 +133,9 @@ const ServicePage = ({ service }: ServicePageProps) => {
             alt={service.title}
             fill
             priority
-            quality={90}
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-white/85" /> {/* Optional dark overlay for contrast */}
+          <div className="absolute inset-0 bg-white/85" />
 
           <motion.div
             animate={{
