@@ -85,7 +85,7 @@ export const SERVICES = [
   {
     id: 'short-term-accommodation',
     title: 'Short Term Accommodation (Respite)',
-    shortTitle: 'Respite Care',
+    shortTitle: 'Short Term Accommodation',
     icon: 'Palmtree',
     description: 'Quality short-term care in a comfortable environment.',
     features: [
@@ -104,7 +104,7 @@ export const SERVICES = [
   {
     id: 'support-coordination',
     title: 'Support Coordination',
-    shortTitle: 'Coordination',
+    shortTitle: 'Support Coordination',
     icon: 'ClipboardList',
     description: 'Navigate your NDIS plan with expert guidance.',
     features: [

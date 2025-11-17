@@ -255,7 +255,7 @@ const services = [
     features: ['Social activities', 'Group events', 'Skill building', 'Recreation']
   },
   {
-    id: 'independent-living',
+    id: 'supported-independent-living',
     icon: Home,
     title: 'Independent Living',
     description: 'Live independently with tailored 24/7 support in your own home.',
@@ -264,16 +264,16 @@ const services = [
     features: ['24/7 support', 'Care plans', 'Skills dev', 'Home setup']
   },
   {
-    id: 'respite-care',
+    id: 'short-term-accommodation',
     icon: Palmtree,
-    title: 'Respite Care',
+    title: 'Short Term Accommodation',
     description: 'Quality short-term care in a comfortable environment.',
     image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=400&fit=crop',
     color: 'from-yellow-400 to-amber-500',
     features: ['Short stays', 'Activities', 'Expert care', 'Flexible']
   },
   {
-    id: 'coordination',
+    id: 'support-coordination',
     icon: ClipboardList,
     title: 'Support Coordination',
     description: 'Navigate your NDIS plan with expert guidance.',
