@@ -151,7 +151,7 @@
 //                   className="col-span-1 rounded-xl overflow-hidden shadow-lg h-40"
 //                 >
 //                   <Image
-//                     src="/images/home/why-choose-image-1.jpg?q=80&w=400"
+//                     src="/images/home/why-choose-image-1.jpg"
 //                     alt="Care and Support"
 //                     width={200}
 //                     height={200}
@@ -165,7 +165,7 @@
 //                   className="col-span-2 rounded-xl overflow-hidden shadow-lg h-40"
 //                 >
 //                   <Image
-//                     src="/images/home/why-choose-image-2.jpg?q=80&w=600"
+//                     src="/images/home/why-choose-image-2.jpg"
 //                     alt="Inclusive Community"
 //                     width={400}
 //                     height={200}
@@ -179,7 +179,7 @@
 //                   className="col-span-2 rounded-xl overflow-hidden shadow-lg h-48"
 //                 >
 //                   <Image
-//                     src="/images/home/why-choose-image-3.jpg?q=80&w=600"
+//                     src="/images/home/why-choose-image-3.jpg"
 //                     alt="Diverse Abilities"
 //                     width={400}
 //                     height={250}
@@ -193,7 +193,7 @@
 //                   className="col-span-1 rounded-xl overflow-hidden shadow-lg h-48"
 //                 >
 //                   <Image
-//                     src="/images/home/why-choose-image-4.jpg?q=80&w=400"
+//                     src="/images/home/why-choose-image-4.jpg"
 //                     alt="Respect and Dignity"
 //                     width={200}
 //                     height={250}
@@ -207,7 +207,7 @@
 //                   className="col-span-3 rounded-xl overflow-hidden shadow-xl relative h-52"
 //                 >
 //                   <Image
-//                     src="/images/home/why-choose-image-5.jpg?q=80&w=900"
+//                     src="/images/home/why-choose-image-5.jpg"
 //                     alt="Unity and Care"
 //                     width={600}
 //                     height={300}
@@ -424,7 +424,7 @@ export default function WhyChooseSection() {
                 {/* Top Left - Eager load */}
                 <div className="col-span-1 rounded-xl overflow-hidden shadow-lg h-40 transition-transform duration-300 ease-out hover:scale-105">
                   <Image
-                    src="/images/home/why-choose-image-1.jpg?q=80&w=400"
+                    src="/images/home/why-choose-image-1.jpg"
                     alt="Care and Support"
                     width={200}
                     height={200}
@@ -438,7 +438,7 @@ export default function WhyChooseSection() {
                 {/* Top Right - Eager load */}
                 <div className="col-span-2 rounded-xl overflow-hidden shadow-lg h-40 transition-transform duration-300 ease-out hover:scale-105">
                   <Image
-                    src="/images/home/why-choose-image-2.jpg?q=80&w=600"
+                    src="/images/home/why-choose-image-2.jpg"
                     alt="Inclusive Community"
                     width={400}
                     height={200}
@@ -452,7 +452,7 @@ export default function WhyChooseSection() {
                 {/* Middle Left - Eager load */}
                 <div className="col-span-2 rounded-xl overflow-hidden shadow-lg h-48 transition-transform duration-300 ease-out hover:scale-105">
                   <Image
-                    src="/images/home/why-choose-image-3.jpg?q=80&w=600"
+                    src="/images/home/why-choose-image-3.jpg"
                     alt="Diverse Abilities"
                     width={400}
                     height={250}
@@ -466,7 +466,7 @@ export default function WhyChooseSection() {
                 {/* Middle Right - Lazy load */}
                 <div className="col-span-1 rounded-xl overflow-hidden shadow-lg h-48 transition-transform duration-300 ease-out hover:scale-105">
                   <Image
-                    src="/images/home/why-choose-image-4.jpg?q=80&w=400"
+                    src="/images/home/why-choose-image-4.jpg"
                     alt="Respect and Dignity"
                     width={200}
                     height={250}
@@ -480,7 +480,7 @@ export default function WhyChooseSection() {
                 {/* Bottom Full - Lazy load */}
                 <div className="col-span-3 rounded-xl overflow-hidden shadow-xl relative h-52 transition-transform duration-300 ease-out hover:scale-105">
                   <Image
-                    src="/images/home/why-choose-image-5.jpg?q=80&w=900"
+                    src="/images/home/why-choose-image-5.jpg"
                     alt="Unity and Care"
                     width={600}
                     height={300}
